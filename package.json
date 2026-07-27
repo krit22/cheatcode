@@ -1,0 +1,57 @@
+{
+  "name": "cheatcode-cli",
+  "version": "1.0.0",
+  "description": "Stealth CLI AI Assistant powered by OpenRouter",
+  "license": "MIT",
+  "bin": {
+    "cheatcode": "dist/bundle.js",
+    "cheatcode-cli": "dist/bundle.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "esbuild source/cli.js --bundle --platform=node --format=esm --alias:react-devtools-core=./source/empty.js --loader:.js=jsx --outfile=dist/bundle.js --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" && cp node_modules/yoga-wasm-web/dist/yoga.wasm dist/",
+    "dev": "babel --out-dir=dist --watch source",
+    "compile": "npm run build && pkg . --out-path bin/",
+    "prepublishOnly": "npm run build",
+    "test": "prettier --check . && xo && ava",
+    "start": "node dist/bundle.js"
+  },
+  "pkg": {
+    "assets": [
+      "dist/yoga.wasm"
+    ],
+    "targets": [
+      "node24-linux-x64",
+      "node24-win-x64",
+      "node24-macos-x64"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "ink": "^4.1.0",
+    "meow": "^11.0.0",
+    "open": "^10.1.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "@vdemedes/prettier-config": "^2.0.1",
+    "@yao-pkg/pkg": "^6.21.0",
+    "ava": "^5.2.0",
+    "chalk": "^5.2.0",
+    "esbuild": "^0.28.1",
+    "eslint-config-xo-react": "^0.27.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "import-jsx": "^5.0.0",
+    "ink-testing-library": "^3.0.0",
+    "prettier": "^2.8.7",
+    "xo": "^0.53.1"
+  }
+}
