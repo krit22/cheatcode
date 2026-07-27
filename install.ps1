@@ -1,5 +1,8 @@
 $ErrorActionPreference = 'Stop'
 
+# Enforce TLS 1.2 for GitHub HTTPS connections in Windows PowerShell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
+
 $repo = "krit22/cheatcode"
 $binaryName = "cheatcode.exe"
 $url = "https://github.com/$repo/releases/latest/download/cheatcode-cli-win.exe"
@@ -12,7 +15,15 @@ if (-not (Test-Path $installDir)) {
 $targetPath = Join-Path $installDir $binaryName
 
 Write-Host "==> Downloading cheatcode for Windows..." -ForegroundColor Cyan
-Invoke-WebRequest -Uri $url -OutFile $targetPath
+
+try {
+    Invoke-WebRequest -Uri $url -OutFile $targetPath -UserAgent "Mozilla/5.0"
+} catch {
+    Write-Host "`nError downloading Windows binary from GitHub Releases!" -ForegroundColor Red
+    Write-Host "Please ensure 'cheatcode-cli-win.exe' is uploaded to your GitHub Release (v1.0.0):" -ForegroundColor Yellow
+    Write-Host "  https://github.com/$repo/releases/tag/v1.0.0" -ForegroundColor Yellow
+    exit 1
+}
 
 # Add installDir to User PATH if missing
 $userPath = [Environment]::GetEnvironmentVariable("PATH", "User")
