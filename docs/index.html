@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheatCode — Stealth AI Assistant in Your Terminal</title>
+    <meta name="description" content="CheatCode is a stealth CLI AI assistant that lives inside your terminal. Get instant AI help without leaving your workflow. Press Tab for stealth mode." />
+    <meta name="keywords" content="CLI, AI, terminal, assistant, OpenRouter, developer tools, stealth mode, cheatcode" />
+    <meta property="og:title" content="CheatCode — Stealth AI in Your Terminal" />
+    <meta property="og:description" content="AI assistant disguised as a normal terminal. One command to install. Stealth mode included." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CheatCode — Stealth AI in Your Terminal" />
+    <meta name="twitter:description" content="AI assistant disguised as a normal terminal. One command to install." />
+    <link rel="canonical" href="https://github.com/krit22/cheatcode" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Schema.org JSON-LD Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CheatCode",
+      "operatingSystem": "macOS, Linux, Windows",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Stealth CLI AI assistant that lives inside your terminal with instant 1-Tab camouflage disguise."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+         ═══════════════════════════════════════════ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="CheatCode Home">
+                <pre class="nav-ascii-logo">
+ ██████╗██╗  ██╗███████╗█████╗ ████████╗ ██████╗  ██████╗ ██████╗ ███████╗
+██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝ ██╔═══██╗██╔══██╗██╔════╝
+██║     ███████║█████╗  ███████║   ██║   ██║      ██║   ██║██║  ██║█████╗  
+██║     ██╔══██║██╔══╝  ██╔══██║   ██║   ██║      ██║   ██║██║  ██║██╔══╝  
+╚██████╗██║  ██║███████╗██║  ██║   ██║   ╚██████╗ ╚██████╔╝██████╔╝███████╗
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝</pre>
+            </a>
+            <div class="nav-links">
+                <a href="#install-guide">Install</a>
+                <a href="#stealth">Stealth Mode</a>
+                <a href="https://github.com/krit22/cheatcode" target="_blank" rel="noopener" class="nav-github" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1: HERO
+         The very first thing visitors see.
+         Purpose: Name, tagline, install command.
+         ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <h1 class="sr-only">CheatCode — Stealth CLI AI Assistant in Your Terminal</h1>
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <!-- Walking Hammer Monster + ASCII Logo -->
+            <div class="terminal-logo-wrapper">
+                <div class="walking-monster" id="walking-monster" title="Hammer Monster">
+                    <svg class="monster-svg" width="56" height="56" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="11" height="11" rx="3" fill="#00e5a0" />
+                        <circle cx="7.5" cy="7.5" r="1.4" fill="#08080c" />
+                        <circle cx="11.5" cy="7.5" r="1.4" fill="#08080c" />
+                        <circle cx="8" cy="7.2" r="0.5" fill="#ffffff" />
+                        <circle cx="12" cy="7.2" r="0.5" fill="#ffffff" />
+                        <g class="hammer-group">
+                            <path d="M12 9.5H16" stroke="#00e5a0" stroke-width="2" stroke-linecap="round" />
+                            <line x1="16" y1="9.5" x2="20" y2="4" stroke="#9090a0" stroke-width="2" stroke-linecap="round" />
+                            <rect x="17" y="1" width="7" height="4" rx="0.5" fill="#e8e8ee" stroke="#111" stroke-width="0.5" />
+                        </g>
+                        <line class="leg-left" x1="6.5" y1="15" x2="6.5" y2="21.5" stroke="#00e5a0" stroke-width="2.4" stroke-linecap="round" />
+                        <line class="leg-right" x1="12.5" y1="15" x2="12.5" y2="21.5" stroke="#00e5a0" stroke-width="2.4" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <pre class="terminal-ascii-logo">
+ ██████╗██╗  ██╗███████╗█████╗ ████████╗ ██████╗  ██████╗ ██████╗ ███████╗
+██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝ ██╔═══██╗██╔══██╗██╔════╝
+██║     ███████║█████╗  ███████║   ██║   ██║      ██║   ██║██║  ██║█████╗  
+██║     ██╔══██║██╔══╝  ██╔══██║   ██║   ██║      ██║   ██║██║  ██║██╔══╝  
+╚██████╗██║  ██║███████╗██║  ██║   ██║   ╚██████╗ ╚██████╔╝██████╔╝███████╗
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝</pre>
+            </div>
+
+            <p class="hero-tagline">
+                ai in your terminal on 
+                <span class="pencil-sketch-wrapper">
+                    <span class="pencil-text">stealth mode</span>
+                    <svg class="pencil-sketch-svg" viewBox="0 0 160 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="pencil-path" d="M 4,10 C 45,15 105,7 156,11 Q 120,14 70,13.5" fill="none" stroke="#00e5a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </p>
+
+            <div class="hero-actions">
+                <div class="install-box" id="install-box">
+                    <code>npm install -g cheatcode-cli</code>
+                    <button class="copy-btn" onclick="copyInstall()" aria-label="Copy install command">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+            </div>
+            <a href="#install-guide" class="btn-get-started">See how to install ↓</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2: INSTALLATION
+         Split layout: Prominent terminal on left,
+         ultra-clean minimal instructions on right.
+         ═══════════════════════════════════════════ -->
+    <section class="install-guide" id="install-guide">
+        <div class="install-guide-inner">
+
+            <!-- Left: Prominent, high-visibility CLI Terminal -->
+            <div class="ig-terminal" id="ig-terminal-wrap">
+                <div class="mini-terminal ig-mini-terminal">
+                    <div class="mini-bar">
+                        <div class="mini-dots"><span></span><span></span><span></span></div>
+                        <span class="mini-title">Terminal — bash</span>
+                    </div>
+                    <div class="mini-body ig-term-body" id="ig-term-body">
+                        <!-- Lines typed in by JS animation -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Minimalist, clean instruction text -->
+            <div class="ig-instructions" id="ig-instructions">
+                <h2>Get started in seconds.</h2>
+
+                <div class="ig-simple-steps">
+                    <div class="ig-simple-step">
+                        <span class="ig-step-title">1. Install</span>
+                        <div class="ig-code-box"><code>npm install -g cheatcode-cli</code></div>
+                    </div>
+
+                    <div class="ig-simple-step">
+                        <span class="ig-step-title">2. Launch</span>
+                        <div class="ig-code-box"><code>cheatcode</code></div>
+                    </div>
+
+                    <div class="ig-simple-step">
+                        <span class="ig-step-title">3. Stealth Disguise</span>
+                        <p class="ig-step-desc">Press <kbd class="kbd-prominent">Tab</kbd> anytime to disguise</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3: STEALTH MODE DEMO
+         Interactive CLI + Tab trigger button with pointer arrow
+         + minimal explanation text.
+         ═══════════════════════════════════════════ -->
+    <section class="stealth" id="stealth">
+        <div class="stealth-inner">
+
+            <!-- Left: Interactive Terminal + Tab Trigger with Pointer Hint -->
+            <div class="stealth-interactive-wrap">
+                
+                <!-- Floating Trigger Bar with Pointer Arrow -->
+                <div class="stealth-trigger-bar">
+                    <button class="stealth-tab-btn" id="stealth-tab-btn" aria-label="Toggle Stealth Mode">
+                        <span class="tab-key-caps"><kbd>Tab</kbd></span>
+                        <span class="tab-btn-label" id="tab-btn-label">Click Tab to toggle</span>
+                    </button>
+
+                    <!-- Pointer Arrow & Text Hint -->
+                    <div class="stealth-pointer-hint">
+                        <svg class="pointer-arrow-svg" width="36" height="24" viewBox="0 0 36 24" fill="none">
+                            <path d="M30 18 C22 16 12 14 6 6 M6 6 L12 5 M6 6 L6 12" stroke="#00e5a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="pointer-text">Try it out — click Tab!</span>
+                    </div>
+                </div>
+
+                <!-- Single Interactive Morphing Terminal -->
+                <div class="mini-terminal stealth-terminal" id="stealth-terminal">
+                    <div class="mini-bar">
+                        <div class="mini-dots"><span></span><span></span><span></span></div>
+                        <div class="stealth-status-badge" id="stealth-status-badge">
+                            <span class="badge-dot-indicator active" id="badge-dot-indicator"></span>
+                            <span id="stealth-badge-text">Normal Mode</span>
+                        </div>
+                    </div>
+
+                    <div class="mini-body stealth-term-body" id="stealth-term-body">
+                        <!-- Normal Mode Content -->
+                        <div class="stealth-content-ai" id="stealth-content-ai">
+                            <div class="stealth-q-title">How can I reverse a string in JavaScript?</div>
+                            <div class="stealth-a-body">Use <code>str.split('').reverse().join('')</code></div>
+                            <div class="ml" style="margin-top: 16px;"><span class="cursor-blink">|</span></div>
+                        </div>
+
+                        <!-- Stealth Mode Content (Clean Console) -->
+                        <div class="stealth-content-disguise" id="stealth-content-disguise" style="display: none;">
+                            <div class="ml"><span class="mp-stealth">$</span> git status</div>
+                            <div class="ml mstealth">On branch main — working tree clean</div>
+                            <div class="ml"><span class="mp-stealth">$</span> <span class="cursor-blink">|</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right: Dynamic Text Column -->
+            <div class="stealth-text-col">
+                <h2 class="stealth-main-title">Chats <span class="dynamic-word-wrap"><span class="dynamic-word word-visible" id="stealth-word">Visible</span></span></h2>
+                <p class="stealth-lead" id="stealth-dynamic-subtext">AI response is active on screen.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5: FINAL CTA
+         Last push to install.
+         ═══════════════════════════════════════════ -->
+    <section class="cta-section" id="install">
+        <div class="cta-card">
+            <h2>Ready to try?</h2>
+            <p>Install CheatCode in seconds. Free, open source, zero tracking.</p>
+            <div class="install-box install-box-lg">
+                <code>npm install -g cheatcode-cli</code>
+                <button class="copy-btn" onclick="copyInstall()" aria-label="Copy install command">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+            </div>
+            <div class="cta-alt">
+                or run instantly with <code class="inline-code">npx cheatcode-cli</code>
+            </div>
+            <div class="cta-links">
+                <a href="https://www.npmjs.com/package/cheatcode-cli" target="_blank" rel="noopener" class="link-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0H1.763zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z"/></svg>
+                    npm
+                </a>
+                <a href="https://github.com/krit22/cheatcode" target="_blank" rel="noopener" class="link-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Copied to clipboard!</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <pre class="nav-ascii-logo">
+ ██████╗██╗  ██╗███████╗█████╗ ████████╗ ██████╗  ██████╗ ██████╗ ███████╗
+██╔════╝██║  ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝ ██╔═══██╗██╔══██╗██╔════╝
+██║     ███████║█████╗  ███████║   ██║   ██║      ██║   ██║██║  ██║█████╗  
+██║     ██╔══██║██╔══╝  ██╔══██║   ██║   ██║      ██║   ██║██║  ██║██╔══╝  
+╚██████╗██║  ██║██████╗ ██║  ██║   ╚██████╗ ╚██████╔╝██████╔╝███████╗
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝</pre>
+                <span class="footer-sep">·</span>
+                <span class="footer-muted">Built by <a href="https://github.com/krit22" target="_blank" rel="noopener">Krit</a></span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-muted">© 2026 CheatCode. Open source under MIT.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
