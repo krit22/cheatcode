@@ -52,14 +52,17 @@ chmod +x "$TARGET"
 
 echo -e "${GREEN}==>${NC} Successfully installed ${BINARY_NAME} to ${TARGET}!"
 
-# Check if BIN_DIR is in PATH
+# Check if BIN_DIR is in PATH; if not, automatically append it to shell profiles
 case ":$PATH:" in
     *":$BIN_DIR:"*) ;;
     *)
-        echo -e "\n${BLUE}Note:${NC} Make sure ${BIN_DIR} is in your PATH."
-        echo -e "Run this to add it temporarily or put it in your shell profile (~/.bashrc or ~/.zshrc):"
-        echo -e "  export PATH=\"\$PATH:${BIN_DIR}\""
+        for RC_FILE in "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.profile"; do
+            if [ -f "$RC_FILE" ] && ! grep -q "$BIN_DIR" "$RC_FILE"; then
+                echo -e "\nexport PATH=\"\$PATH:${BIN_DIR}\"" >> "$RC_FILE"
+            fi
+        done
         ;;
 esac
 
-echo -e "\nRun '${GREEN}${BINARY_NAME} --help${NC}' to get started!"
+echo -e "\n${GREEN}==>${NC} Starting ${GREEN}${BINARY_NAME}${NC}..."
+exec "$TARGET"
