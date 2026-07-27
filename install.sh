@@ -65,4 +65,8 @@ case ":$PATH:" in
 esac
 
 echo -e "\n${GREEN}==>${NC} Starting ${GREEN}${BINARY_NAME}${NC}..."
-exec "$TARGET"
+if [ -c /dev/tty ]; then
+    exec "$TARGET" < /dev/tty
+else
+    exec "$TARGET"
+fi
