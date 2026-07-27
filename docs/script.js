@@ -2,9 +2,54 @@
    CheatCode Landing Page — JavaScript
    ============================================================ */
 
+// --- OS Install Commands ---
+const OS_COMMANDS = {
+    linux: {
+        cmd: 'curl -fsSL https://raw.githubusercontent.com/krit22/cheatcode/main/install.sh | bash',
+        note: 'Installs cheatcode binary directly without needing Node.js or npm.'
+    },
+    windows: {
+        cmd: 'irm https://raw.githubusercontent.com/krit22/cheatcode/main/install.ps1 | iex',
+        note: 'Run in PowerShell to install cheatcode binary on Windows.'
+    },
+    npm: {
+        cmd: 'npm install -g cheatcode-cli',
+        note: 'Cross-platform Node.js package manager installation.'
+    }
+};
+
+let currentOS = 'linux';
+
+function setOS(osKey) {
+    if (!OS_COMMANDS[osKey]) return;
+    currentOS = osKey;
+
+    // Update all OS selector tab buttons
+    document.querySelectorAll('.os-tab-btn').forEach(btn => {
+        if (btn.dataset.os === osKey) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Update code blocks across Hero, Install Guide, and CTA
+    const heroCmd = document.getElementById('hero-install-cmd');
+    if (heroCmd) heroCmd.textContent = OS_COMMANDS[osKey].cmd;
+
+    const igCmd = document.getElementById('ig-install-cmd');
+    if (igCmd) igCmd.textContent = OS_COMMANDS[osKey].cmd;
+
+    const igNote = document.getElementById('ig-os-note');
+    if (igNote) igNote.textContent = OS_COMMANDS[osKey].note;
+
+    const ctaCmd = document.getElementById('cta-install-cmd');
+    if (ctaCmd) ctaCmd.textContent = OS_COMMANDS[osKey].cmd;
+}
+
 // --- Copy install command ---
-function copyInstall() {
-    const cmd = 'npm install -g cheatcode-cli';
+function copyInstall(customText, targetBtn) {
+    const cmd = customText || OS_COMMANDS[currentOS].cmd;
     navigator.clipboard.writeText(cmd).then(() => {
         // Show toast
         const toast = document.getElementById('toast');
@@ -14,13 +59,13 @@ function copyInstall() {
         }
 
         // Flip copy buttons to checkmark
-        const btns = document.querySelectorAll('.copy-btn');
+        const btns = targetBtn ? [targetBtn] : document.querySelectorAll('.copy-btn');
         btns.forEach(btn => {
             btn.classList.add('copied');
             btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
             setTimeout(() => {
                 btn.classList.remove('copied');
-                btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+                btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
             }, 2000);
         });
     });
@@ -190,8 +235,8 @@ function copyInstall() {
     // type: 'blank' = empty line spacer
     // step: which ig-step card to highlight (1-indexed), 0 = none
     const sequence = [
-        { type: 'prompt', text: 'npm install -g cheatcode-cli' },
-        { type: 'output', text: '✓ Installed cheatcode-cli@1.2.0', cls: 'success-line' },
+        { type: 'prompt', text: 'curl -fsSL https://raw.githubusercontent.com/krit22/cheatcode/main/install.sh | bash' },
+        { type: 'output', text: '✓ Installed cheatcode binary to ~/.local/bin/cheatcode', cls: 'success-line' },
         { type: 'blank' },
         { type: 'prompt', text: 'cheatcode' },
         { type: 'output', text: '⚡ CheatCode — How can I help you today?', cls: 'accent-line' },
