@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 export async function sendMessage(messages, apiKey, model = 'openai/gpt-3.5-turbo') {
 	const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
 		method: 'POST',
