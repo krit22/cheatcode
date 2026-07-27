@@ -483,10 +483,6 @@ kbd {
 .stealth-point p {
     font-size: 0.92rem; color: #8a8ab0; margin: 0; line-height: 1.5;
 }
-    color: var(--accent); border-radius: 8px;
-    box-shadow: 0 3px 0 var(--accent-dim), 0 0 20px rgba(0, 229, 160, 0.15);
-    animation: pulseTab 2s ease-in-out infinite;
-}
 @keyframes pulseTab {
     0%, 100% { box-shadow: 0 3px 0 var(--accent-dim), 0 0 20px rgba(0, 229, 160, 0.15); }
     50%      { box-shadow: 0 3px 0 var(--accent-dim), 0 0 35px rgba(0, 229, 160, 0.3); }
